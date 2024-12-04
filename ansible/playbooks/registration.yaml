@@ -163,3 +163,7 @@
       ansible.builtin.command: zypper lr -u
       register: repos_after
       failed_when: repos_after.rc != 0
+
+    - name: Example of debug message mind to be intercepted by OSADO test
+      ansible.builtin.debug:
+        msg: "[OSADO][softfail] bsc#123456789 Here a generic message with some explanations."
